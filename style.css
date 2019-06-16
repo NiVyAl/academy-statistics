@@ -1,0 +1,25 @@
+/* title */
+
+.title {
+  font-family: "Arial";
+  font-weight: bold;
+}
+
+/* course */
+
+.course {
+  width: 80px;
+  height: 80px;
+  display: block;
+  border-radius: 50%;
+  border: 9px solid #e84e1b;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-position: center center;
+  background-size: 80px;
+  background-color: #4eb543;
+}
+
+.course--acquaintance {
+  background-image: url("img/acquaintance.svg");
+}
