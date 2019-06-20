@@ -3,6 +3,21 @@
 .title {
   font-family: "Arial";
   font-weight: bold;
+  color: #333333;
+}
+
+/* courses */
+
+.courses__list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+}
+
+.courses__item {
+  margin: 5px;
 }
 
 /* course */
@@ -12,14 +27,34 @@
   height: 80px;
   display: block;
   border-radius: 50%;
-  border: 9px solid #e84e1b;
+  border: 5px solid transparent;
   box-sizing: border-box;
   cursor: pointer;
-  background-position: center center;
-  background-size: 80px;
   background-color: #4eb543;
+  background-clip: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+/*
+.course::before {
+  content: "";
+  display: block;
+  opacity: 0.5;
+  border: 40px solid black;
+  position: absolute;
+  z-index: 1;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+} */
+
+.course__img {
+  margin-bottom: 6px;
+  z-index: 1;
 }
 
-.course--acquaintance {
-  background-image: url("img/acquaintance.svg");
+.course:hover {
+  border-color: #e84e1b;
 }
