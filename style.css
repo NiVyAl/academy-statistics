@@ -1,9 +1,16 @@
+:root {
+  --gray: #333333;
+  --light-gray: #e8e8e8;
+  --green: #4eb543;
+  --blue: #302683;
+}
+
 /* title */
 
 .title {
   font-family: "Arial";
   font-weight: bold;
-  color: #333333;
+  color: var(--gray);
 }
 
 /* courses */
@@ -30,7 +37,7 @@
   padding: 5px;
   box-sizing: border-box;
   cursor: pointer;
-  background-color: #4eb543;
+  background-color: var(--green);
   background-clip: content-box;
   display: flex;
   align-items: center;
@@ -57,13 +64,33 @@
 .course::before {
   content: "";
   display: block;
-  border: 35px solid white;
+  border: 38px solid transparent;
   position: absolute;
-  z-index: 1;
+  z-index: 1;/*
   border-left-color: transparent;
   border-right-color: transparent;
-  border-top-color: transparent;
+  border-top-color: transparent;*/
   transform: rotate(-45deg) skewX(0deg);
+}
+
+.course--90::before {
+  border-right-color: white;
+  border-top-color: white;
+  border-bottom-color: white;
+}
+
+.course--180::before {
+  border-right-color: white;
+  border-bottom-color: white;
+}
+
+.course--270::before {
+  border-bottom-color: white;
+}
+/*
+.course:nth-child(1)::before {
+  /transform: rotate(-10deg) skewX(40deg);
+  /border-width: 10px;
 }
 
 .course:nth-child(2)::before {
@@ -73,9 +100,118 @@
 .course:nth-child(5)::before {
   border-bottom-color: transparent;
 }
-
+*/
 .course__img {
   margin-bottom: 6px;
-  z-index: 1;
+  z-index: 3;
 
+}
+
+
+/* descriptions */
+
+.descriptions__list {
+  list-style: none;
+  padding: 0;
+  padding: 0 10px; /* убрать */
+}
+
+
+/* description */
+
+.description {
+  font-family: "Arial";
+  font-size: 16px;
+}
+
+.description__title {
+  color: var(--gray);
+}
+
+.description__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.description__link:hover {
+  text-decoration: underline;
+}
+
+
+/* lessons */
+
+.lessons__list {
+  list-style: none;
+  padding: 0;
+}
+
+.lessons__item {
+  margin-bottom: 20px;
+}
+
+/* lesson */
+
+.lesson__title {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+.lesson__title:hover {
+  text-decoration: underline;
+}
+
+
+/* progress */
+
+.progress {
+  display: flex;
+  align-items: center;
+}
+
+.progress__line {
+  width: 100%;
+  height: 5px;
+  background-color: var(--light-gray);
+  position: relative;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.progress__line::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 5px solid var(--green);
+  border-radius: 50%;
+  top: 0;
+  bottom: 0;
+  left: -15px;
+  margin: auto;
+}
+
+.progress__line::after {
+  content: "";
+  display: block;
+  height: 100%;
+  background-color: var(--green);
+  width: 60%;
+}
+
+.progress__number {
+  background-color: var(--blue);
+  color: white;
+  font-size: 15px;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.progress--full .progress__number {
+  background-color: var(--green);
+}
+
+.progress--full .progress__line::after {
+  width: 100%;
 }

@@ -9,9 +9,13 @@
   <body>
     <h1 class="title">Статистика пройденных курсов</h1>
     
+    <input type="checkbox" id="acquaintance" class="course-input">
+    
     <ul class="courses__list">
-      <li class="courses__item course">
-        <img class="course__img" src="img/acquaintance.svg" width="85">
+      <li class="courses__item">
+        <label class="course" for="acquaintance">
+          <img class="course__img" src="img/acquaintance.svg" width="85">
+        </label>
       </li>
       <li class="courses__item course">
         <img class="course__img" src="img/javascript.svg" width="85">
@@ -50,5 +54,40 @@
         <img class="course__img" src="img/keksby.svg" width="85">
       </li>
     </ul>
+    
+    <ul class="descriptions__list">
+      <li class="description descriptions__item">
+        <h3 class="description__title">Статистика курса <a href="#" class="description__link">«Основы JavaScript»</a></h3>
+        
+        <ul class="lessons__list">
+          <li class="lesson lessons__item">
+            <a href="#" class="lesson__title">Знакомство с JavaScript</a>
+            <div class="progress lesson__progress">
+              <div class="progress__line"></div>
+              <div class="progress__number">14/23</div>
+            </div>
+          </li>
+          
+          <li class="lesson lessons__item">
+            <a href="#" class="lesson__title">Условия</a>
+            <div class="progress progress--full lesson__progress">
+              <div class="progress__line"></div>
+              <div class="progress__number">22/22</div>
+            </div>
+          </li>
+          
+          <li class="lesson lessons__item">
+            <a href="#" class="lesson__title">Циклы</a>
+            <div class="progress lesson__progress">
+              <div class="progress__line"></div>
+              <div class="progress__number">23/35</div>
+            </div>
+          </li>
+        </ul>
+        
+      </li>
+    </ul>
+    
+    <script src="script.js"></script>
   </body>
 </html>
